@@ -1,0 +1,21 @@
+@import "variables.scss";
+
+@mixin font($weight, $size, $height, $color) {
+	font-weight: $weight;
+	font-size: $size;
+	line-height: $height;
+	color: $color;
+}
+
+@mixin flex($justify-content, $align-items) {
+	display: flex;
+	justify-content: $justify-content;
+	align-items: $align-items;
+}
+
+@mixin image-container($max-width, $max-height) {
+	width: 100%;
+	max-width: $max-width;
+	height: 100%;
+	max-height: $max-height;
+}

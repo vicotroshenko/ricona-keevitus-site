@@ -1,0 +1,21 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.about {
+	padding-top: 70px;
+	padding-bottom: 50px;
+	.container {
+		@include flex(space-between, center);
+		.inform {
+			max-width: 527px;
+			.about-text {
+				line-height: 1.16;
+			}
+		}
+		.image-wrapper {
+			@include image-container(619px, 348px)
+		}
+
+	}
+
+}
