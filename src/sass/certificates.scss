@@ -1,0 +1,57 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+
+
+.certificate{
+	padding-top: 104px;
+	padding-bottom: 50px;
+	.container {
+		@include flex(space-between, normal);
+		column-gap: 214px;
+	}
+	.list{
+		width: 100%;
+		@include flex(space-between, normal);
+		column-gap: 20px;
+		.item{
+			position: relative;
+			max-width: 388px;
+			width: 100%;
+			height: 427px;
+			border: 1px solid $light-border;
+			border-radius: 10px;
+			.figure-wrapper {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				border-radius: 10px;
+				overflow: hidden;
+				.figure-top {
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 0;
+					height: 0;
+					border-left: 231px solid transparent;
+					border-right: 231px solid transparent;
+					border-top: 226px solid $subject-t-color;
+				}
+			}
+			.image-wrapper{
+				position: absolute;
+				top: -54;
+				left: 50%;
+				transform: translateX(-50%);
+				@include image-container(245px, 357px)
+			}
+			.description {
+				position: absolute;
+				max-width: 300px;
+				width: 100%;
+				top: 323px;
+				left: 35px;
+			}
+		}
+	}
+}
