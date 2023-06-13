@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-@mixin font($weight, $size, $height, $color) {
+@mixin font($size, $weight, $height, $color) {
 	font-weight: $weight;
 	font-size: $size;
 	line-height: $height;

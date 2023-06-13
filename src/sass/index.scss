@@ -6,7 +6,7 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	@include font(400, 18px, 1.16, $dark-t-color)
+	@include font(18px, 400, 1.16, $dark-t-color)
 }
 
 .container {
@@ -29,7 +29,7 @@ body {
 .subject {
 	position: relative;
 	display: inline-block;
-	@include font(700, 24px, 1.16, $subject-t-color);
+	@include font(24px, 700, 1.16, $subject-t-color);
 	letter-spacing: 0.13em;
 	text-transform: uppercase;
 	&::after {

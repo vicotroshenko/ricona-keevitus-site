@@ -9,7 +9,7 @@
 			@include image-container(95px, 52px)
 		}
 		.nav-site {
-			@include font(500, 18px, 1.17, $dark-t-color);
+			@include font(18px, 500, 1.17, $dark-t-color);
 			.list {
 				@include flex(space-between, center);
 				column-gap: 20px;
