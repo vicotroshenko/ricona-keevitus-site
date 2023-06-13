@@ -1,0 +1,16 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+
+.hero {
+	.container {
+		position: relative;
+		overflow: hidden;
+		max-height: 561px;
+		height: 100%;
+		.main-pictures {
+			@include image-container(800px, 800px);
+			background-image: url("../images/hero-main-1x.jpg");
+		}
+	}
+}
