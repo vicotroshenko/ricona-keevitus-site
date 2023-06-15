@@ -2,6 +2,13 @@
 @import "mixins.scss";
 
 .header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 400;
+		background-color: $white-color;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 	.container {
 		height: 80px;
 		@include flex(space-between, center);
@@ -9,11 +16,104 @@
 			@include image-container(95px, 52px)
 		}
 		.nav-site {
+			background-color: $white-color;
 			@include font(18px, 500, 1.17, $dark-t-color);
 			.list {
-				@include flex(space-between, center);
-				column-gap: 20px;
+
+				.item {
+					@media screen and (max-width: 960px) {
+						@include flex(center, flex-start);
+						width: 100%;
+						max-width: 200px;
+					}
+				}
+				@media screen and (max-width: 960px) {
+					@include flex(center, flex-start);
+					flex-direction: column;
+					row-gap: 20px;
+					margin-top: 40px;
+					margin-left: 40px;
+					width: 100%;
+				}
+				@media screen and (min-width: 961px) {
+					@include flex(space-between, center);
+					column-gap: 20px;
+				}
+				.link {
+					@media screen and (max-width: 980px){
+						display: block;
+						width: 100%;
+					}
+					position: relative;
+					padding: 7px 0;
+				}
+				.link::before {
+					background: rgba(17, 38, 58, 0.5);
+					border-radius: 6px;
+					content: "";
+					inset: 0;
+					position: absolute;
+					transform: scaleX(0);
+					transform-origin: right;
+					transition: transform 0.5s ease-in-out;
+					z-index: 1;
+				}
+				.link:hover::before {
+					transform: scaleX(1);
+					transform-origin: left;
+				}
+				.link:focus::before {
+					transform: scaleX(1);
+					transform-origin: left;
+				}
 			}
 		}
+	}
+}
+
+.buttons-container {
+	@media screen and (min-width: 960px){
+		display: none;
+	}
+	.mobil-button {
+		@include flex(center, center);
+		padding: 0;
+		border: none;
+		border-radius: 8px;
+		padding: 5px;
+		width: 40px;
+		height: 40px;
+		background-color: $white-t-color;
+		.mobil-icon {
+			width: 32px;
+			height: 32px;
+			fill: $nav-t-color;
+		}
+		&.hide {
+			display: none;
+		}
+	}
+}
+
+.mobil-container {
+	@media screen and (max-width: 960px) {
+		position: absolute;
+		top: 80;
+		right: 0;
+		width: 300px;
+		height: 100vh;
+		z-index: 199;
+		background-color: $white-color;
+		transform: translateX(305px);
+		visibility: hidden;
+		opacity: 0;
+		transition: all 250ms linear;
+		
+	}
+	&.is-open {
+		visibility: visible;
+		opacity: 1;
+		transform: translateX(0);
+		transition: all 250ms linear;
 	}
 }
