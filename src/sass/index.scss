@@ -4,12 +4,18 @@
 @import "hero.scss";
 @import "about.scss";
 @import "certificates.scss";
+@import "productionCapacity.scss";
 @import "staff.scss";
 
 body {
 	font-family: 'Roboto', sans-serif;
 	@include font(18px, 400, 1.16, $dark-t-color);
 	margin-top: 80px;
+}
+.img {
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 .container {
 	max-width: 1440px;
@@ -19,11 +25,9 @@ body {
 p {
 	margin: 0;
 }
-
 .container-padding {
 	padding: 0 30px;
 }
-
 .list{
 	list-style-type: none;
 	margin: 0;
@@ -33,20 +37,21 @@ p {
 	text-decoration: none;
 	color: $nav-t-color;
 }
-
 .subject {
-	position: relative;
 	display: inline-block;
 	@include font(24px, 700, 1.16, $subject-t-color);
 	letter-spacing: 0.13em;
 	text-transform: uppercase;
 	&::after {
-		content: " ";
-		position: absolute;
-		right: -145;
-		bottom: 50%;
-		width: 130px;
-		height: 1px;
-		background-color: black;
+		content: "";
+        display: inline-block;
+        vertical-align: middle;
+        box-sizing: border-box;
+        width: 130px;
+        height: 1px;
+        background: black;
+        // border: solid #fff;
+        // border-width: 0 10px;
+        margin-right: -100%;
 	}
 }
