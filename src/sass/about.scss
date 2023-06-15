@@ -6,14 +6,24 @@
 	padding-bottom: 50px;
 	overflow: hidden;
 	.container {
-		@include flex(space-between, center);
+		@media screen and (min-width: 960px) {
+			@include flex(space-between, center);
+		}
 		.inform {
-			max-width: 527px;
+			width: 100%;
 			.about-text {
 				line-height: 1.16;
+				width: 527px;
+				@media screen and (max-width: 960px) {
+    			margin: 0 auto;
+				}
 			}
 		}
 		.image-wrapper {
+			@media screen and (max-width: 960px) {
+				margin: 0 auto;
+				margin-top: 20px;
+			}
 			@include image-container(619px, 348px)
 		}
 
