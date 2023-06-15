@@ -4,6 +4,7 @@
 .about {
 	padding-top: 70px;
 	padding-bottom: 50px;
+	overflow: hidden;
 	.container {
 		@include flex(space-between, center);
 		.inform {

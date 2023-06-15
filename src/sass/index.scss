@@ -10,7 +10,6 @@ body {
 	font-family: 'Roboto', sans-serif;
 	@include font(18px, 400, 1.16, $dark-t-color);
 }
-
 .container {
 	max-width: 1440px;
 	width: 100%;
@@ -19,6 +18,7 @@ body {
 p {
 	margin: 0;
 }
+
 .container-padding {
 	padding: 0 30px;
 }
