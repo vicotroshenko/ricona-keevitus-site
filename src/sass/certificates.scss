@@ -7,14 +7,25 @@
 	padding-top: 104px;
 	padding-bottom: 50px;
 	.container {
-		@include flex(space-between, normal);
-		column-gap: 214px;
+		display: block;
+		@media screen and(min-width: 961px) {
+			@include flex(space-between, normal);
+			column-gap: 214px;
+		}
+
 	}
 	.list{
-		width: 100%;
-		@include flex(space-between, normal);
-		column-gap: 20px;
+		display: block;
+		margin-top: 50px;
+		@media screen and (min-width: 961px) {
+			margin-top: 0;
+			width: 100%;
+			@include flex(space-between, normal);
+			column-gap: 20px;
+		}
+
 		.item{
+			margin: 0 auto;
 			position: relative;
 			max-width: 388px;
 			width: 100%;
