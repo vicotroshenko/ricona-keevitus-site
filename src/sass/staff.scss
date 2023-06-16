@@ -88,30 +88,4 @@
   }
 }
 
-.subjects {
-  position: relative;
-  display: inline-block;
-  @include font(24px, 700, 1.16, $subject-t-color);
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  &::after {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-    width: 130px;
-    height: 1px;
-    background: black;
-    border: solid #fff;
-    border-width: 0 10px;
-    margin-right: -100%;
 
-    // content: " ";
-    // position: absolute;
-    // right: -145;
-    // bottom: 50%;
-    // width: 130px;
-    // height: 1px;
-    // background-color: black;
-  }
-}

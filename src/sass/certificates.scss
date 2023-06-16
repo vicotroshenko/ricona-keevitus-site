@@ -4,47 +4,45 @@
 
 
 .certificate{
-	padding-top: 104px;
-	padding-bottom: 50px;
+	padding-top: 154px;
 	.container {
 		display: block;
-		@media screen and(min-width: 961px) {
+		@media screen and(min-width: $tablet-small) {
 			@include flex(space-between, normal);
 			column-gap: 214px;
 		}
-
 	}
-	.list{
-		display: block;
-		margin-top: 50px;
-		@media screen and (min-width: 961px) {
-			margin-top: 0;
+	&-list{
+		@include flex(center, center);
+		flex-direction: column;
+		@media screen and (min-width: $tablet-small) {
 			width: 100%;
-			@include flex(space-between, normal);
-			column-gap: 20px;
+			flex-direction: row;
+			column-gap: 50px;
 		}
-
-		.item{
-			margin: 0 auto;
+		&-item{
 			position: relative;
+			@include flex(flex-end, center);
+			flex-direction: column;
 			max-width: 388px;
 			width: 100%;
-			height: 427px;
+			min-height: 427px;
 			border: 1px solid $light-border;
-			border-radius: 10px;
-			&:first-child ~ .item {
-				@media screen and (max-width: 960px) {
-					margin-top: 70px;
-				}
-
+			border-radius: 10px;	
+			margin-top: 70px;
+			&:nth-child(2){
+				padding-bottom: 40px;
 			}
-			.figure-wrapper {
+			@media screen and (min-width: $tablet-small) {
+				margin: 0;
+			}
+			.figure {
 				position: relative;
 				width: 100%;
 				height: 100%;
 				border-radius: 10px;
 				overflow: hidden;
-				.figure-top {
+				&-top {
 					position: absolute;
 					top: 0;
 					right: 0;
@@ -60,15 +58,20 @@
 				top: -54;
 				left: 50%;
 				transform: translateX(-50%);
-				@include image-container(245px, 357px)
-			}
-			.description {
-				position: absolute;
-				max-width: 300px;
-				width: 100%;
-				top: 323px;
-				left: 35px;
+				@include image-container(245px, 357px);
+				&.first {
+					background: url("../images/certificate-a.jpg");
+				}
+				&.second {
+					background: url("../images/certificate-b.jpg");
+				}
 			}
 		}
+	}
+	&-description {
+		max-width: 300px;
+		width: 100%;
+		min-height: 84px;
+		padding: 20px;
 	}
 }

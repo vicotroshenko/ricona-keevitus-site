@@ -2,64 +2,66 @@
 @import "mixins.scss";
 
 .capacity {
+	padding-top: 100px;
 	.container{
 		width: 100%;
 		max-width: none;
 		display: inline-block;
-		@media screen and (min-width: 961px) {
+		@media screen and (min-width: $tablet-small) {
 			width: 50%;
 		}
 		min-height: 468px;
 	}
-		.subject {
-			margin-top: 50px;
-			display: flex;
-			justify-content: center;
+	.subjects {
+		max-width: 50%;
+		text-align: center;
+		padding: 0 0 0 20px;
+		@media screen and (min-width: $mobile) and (max-width: $desctop){
+			text-align: left;
+		}
+		@media screen and (min-width: $desctop){
+			text-align: center;
+		}
+
+	}
+	&-list-container {
+		position: relative;
+		@include flex(baseline, center);
+		flex-direction: column;
+		background-color: $subject-t-color;
+		margin-top: 30px;
+		padding: 40px 20px 36px 20px;
+		@media screen and (min-width: $mobile) and (max-width: $tablet-small){
 			align-items: center;
-			margin-right: 300px;
+			padding: 40px 58px 36px 0;
 		}
-		.turnover-container {
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			
-			background-color: $subject-t-color;
-			margin-top: 30px;
-			@media screen and(max-width: 600px) {
-				align-items: center;
-				padding: 40px 0 36px 0;
-			}
-			@media screen and (min-width: 601px) and (max-width: 960px){
-				align-items: center;
-				padding: 40px 58px 36px 0;
-			}
-			@media screen and (min-width: 961px) {
-				align-items: flex-end;
-				padding: 40px 198px 36px 0;
-			}
-			
-			.list-title {
-				margin: 0;
-				padding: 0;
-				color: $white-t-color;
-			}
-			.wrapper {
-				max-width: 386px;
-				width: 100%;
-				.list {
-					margin-top: 10px;
-					@include font(18, 400, 1.5, $white-t-color)
-				}
-			}
-			.image-wrapper {
-				@media screen and (min-width: 961px) {
-					position: absolute;
-					right: -351px;
-					top: 20px;
-					max-width: 488px;
-					@include image-container(488px, 366px)
-				}
+		@media screen and (min-width: $tablet-small) {
+			align-items: flex-end;
+			padding: 40px 198px 36px 0;
+		}
+		
+		.list-title {
+			margin: 0;
+			padding: 0;
+			color: $white-t-color;
+		}
+		.wrapper {
+			max-width: 386px;
+			width: 100%;
+			.list {
+				padding-top: 10px;
+				@include font(18, 400, 1.5, $white-t-color)
 			}
 		}
+		.image-wrapper {
+			@media screen and (min-width: $tablet-small) {
+				position: absolute;
+				right: -351px;
+				top: 20px;
+				max-width: 488px;
+				@include image-container(488px, 366px)
+			}
+		}
+	}
 
 }
