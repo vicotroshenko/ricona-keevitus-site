@@ -33,11 +33,11 @@
 		padding: 40px 20px 36px 20px;
 		@media screen and (min-width: $mobile) and (max-width: $tablet-small){
 			align-items: center;
-			padding: 40px 58px 36px 0;
+			padding: 40px 58px 36px 20px;
 		}
 		@media screen and (min-width: $tablet-small) {
 			align-items: flex-end;
-			padding: 40px 198px 36px 0;
+			padding: 40px 198px 36px 20px;
 		}
 		
 		.list-title {
@@ -50,14 +50,22 @@
 			width: 100%;
 			.list {
 				padding-top: 10px;
-				@include font(18, 400, 1.5, $white-t-color)
+				@include font(18, 400, 1.5, $white-t-color);
+				.item::before {
+					content: "---";
+					padding-right: 5px;
+				}
 			}
 		}
 		.image-wrapper {
+			padding-top: 20px;
+			@media screen and (min-width: $mobile){
+				padding-top: 0;
+			}
 			@media screen and (min-width: $tablet-small) {
 				position: absolute;
 				right: -351px;
-				top: 20px;
+				top: 30px;
 				max-width: 488px;
 				@include image-container(488px, 366px)
 			}
