@@ -2,6 +2,7 @@
 @import 'mixins.scss';
 
 .staff {
+  padding-top: 100px;
   &-container {
     display: flex;
     flex-direction: column;
