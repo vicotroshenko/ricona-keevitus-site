@@ -6,6 +6,7 @@
 @import "certificates.scss";
 @import "productionCapacity.scss";
 @import "staff.scss";
+@import "contact.scss";
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -52,7 +53,7 @@ p {
     box-sizing: border-box;
     width: 130px;
     height: 1px;
-    background: black;
+    background: $subject-t-color;
     border: solid #fff;
     border-width: 0 10px;
     margin-right: -100%;

@@ -1,0 +1,67 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.contact {
+	margin-top: 100px;
+	background-color: $subject-t-color;
+	.container {
+		padding: 40px 30px 93px 30px;
+	}
+	.subjects {
+		color: $white-t-color;
+		margin-bottom: 48px;
+		width: 50%;
+    text-align: center;
+		&::after{
+			background-color: $white-t-color
+		}
+	}
+	&-list{
+		@include font(13px, 400, 1.5, $subject-t-color);
+		@include flex(flex-start, center);
+		flex-direction: column;
+		row-gap: 20px;
+		@media screen and (min-width: $mobile){
+			flex-direction: row;
+			flex-wrap: wrap;
+			column-gap: 20px;
+			
+
+		}
+		&-item {
+			@include flex(center, center);
+			flex-direction: column;
+			width: 100%;
+			min-height: 230px;
+			padding: 30px 10px;
+			background-color: $f-contact-color;
+			@media screen and (min-width: $mobile) {
+				width: 48%;
+			} 
+			@media screen and (min-width: $tablet-small) {
+				width: 31%;
+				min-height: 313px;
+			} 
+			@media screen and (min-width: $desctop) {
+				max-width: 228px;
+				min-height: 316px;
+			}
+			&.pictures {
+				background-color: $white-t-color
+			} 
+		}
+	}
+	&-icon {
+		@include image-container(54px, 54px);
+		padding: 16px;
+		background-color: $subject-t-color;
+		fill: $white-t-color;
+		border-radius: 50%;
+	}
+	&-text {
+		padding-top: 21px;
+		&-element {
+			text-align: center;
+		}
+	}
+}
