@@ -18,7 +18,7 @@ function toggleModal() {
   modal.classList.toggle('is-hidden');
 }
 
-openModalBtn.forEach(btn => imageList.push(btn.children[0].currentSrc));
+openModalBtn.forEach(btn => imageList.push(btn.src));
 console.log(imageList);
 
 function getImage(event) {
