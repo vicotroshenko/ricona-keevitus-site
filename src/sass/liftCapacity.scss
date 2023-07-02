@@ -79,9 +79,14 @@
 			height: 19vw;
 			width: 25vw;
 			@media screen and (min-width: $tablet-small){
-				width: auto;
+				width: 100%;
 				height: 152px;
+				& .img {
+					height: auto;
+					transform: translateY(-15%);
+				}
 			}
+
 		}
 	}
 }

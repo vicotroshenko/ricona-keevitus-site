@@ -22,9 +22,8 @@ openModalBtn.forEach(btn => imageList.push(btn.src));
 console.log(imageList);
 
 function getImage(event) {
-  imageContainer.innerHTML = `<img src="${event.target.currentSrc}" alt="" class="img"/>`;
+  imageContainer.innerHTML = `<img src="${event.target.src}" alt="" class="img"/>`;
 }
-
 function getSlider(event) {
   const name = event.target.name;
   index = name === 'forward' ? index + 1 : index - 1;
