@@ -1,14 +1,32 @@
-<div class="slider is-hidden" data-modal>
+<div class="slider is-hidden js-slider" data-modal>
 	<div class="backdrop">
 		<div class="container-nav">
-			<button type="button" class="btn-close" data-modal-close>X</button>
+			<button type="button" name="scale" class="btn scale">
+				<svg class="icon-slider">
+					<use href="./images/icons.svg#glass-icon"></use>
+				</svg>
+			</button>
+			<button type="button" name="close" class="btn close" data-modal-close>
+				<svg class="icon-slider slider-close">
+					<use href="./images/icons.svg#icon-mobile-close"></use>
+				</svg>
+			</button>
 		</div>
-		<button type="button" name="back" class="btn-slider js-btn-slider-back">back</button>
-		
-		X
-		</button>
+		<div>
+			<button type="button" name="back" class="btn change-slide">
+				<svg class="icon-slider slider-arrow back">
+					<use href="./images/icons.svg#arrow-icon"></use>
+				</svg>
+			</button>
+		</div>
 		<div class="container-slider js-container-slider"></div>
-		<button type="button" name="forward" class="btn-slider js-btn-slider-forward">forward</button>
+		<div>
+			<button type="button" name="forward" class="btn change-slide">
+				<svg class="icon-slider slider-arrow">
+					<use href="./images/icons.svg#arrow-icon"></use>
+				</svg>
+			</button>
+		</div>
 	</div>
 </div>
 

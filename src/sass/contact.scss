@@ -18,7 +18,7 @@
 	}
 	&-list{
 		@include font(13px, 400, 1.5, $subject-t-color);
-		@include flex(flex-start, center);
+		@include flex(center, center);
 		flex-direction: column;
 		row-gap: 20px;
 		@media screen and (min-width: $mobile){
@@ -47,7 +47,24 @@
 				min-height: 316px;
 			}
 			&.pictures {
-				background-color: $white-t-color
+				overflow: hidden;
+				background-color: $white-t-color;
+				padding: 0;
+				@media screen and (min-width: $tablet-small) {
+					max-height: 313px;
+				} 
+				@media screen and (min-width: $desctop) {
+					max-height: 316px;
+				}
+				.img {
+					height: 120%;
+					width: 170%;
+					@media screen and (min-width: $tablet-small) {
+						height: 150%;
+						width: 300%;
+					} 
+
+				}
 			} 
 		}
 	}
@@ -65,3 +82,4 @@
 		}
 	}
 }
+
