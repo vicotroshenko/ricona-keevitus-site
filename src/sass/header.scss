@@ -71,6 +71,9 @@
 					transform: scaleX(1);
 					transform-origin: left;
 				}
+				.link:active::before {
+					animation: activeLinkAnim 0.2s ease 0s  normal forwards;
+				}
 			}
 		}
 	}
@@ -120,5 +123,20 @@
 		opacity: 1;
 		transform: translateX(0);
 		transition: all 250ms linear;
+	}
+}
+
+
+@keyframes activeLinkAnim {
+	0% {
+		transform: scale(0.2);
+	}
+
+	80% {
+		transform: scale(0.7);
+	}
+
+	100% {
+		transform: scale(1);
 	}
 }

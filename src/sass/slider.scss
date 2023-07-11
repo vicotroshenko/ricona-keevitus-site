@@ -8,41 +8,62 @@
 	width: 100%;
 	height: 100%;
 	z-index: 400;
-
+	visibility: visible;
+	opacity: 1;
+	transition: all 250ms linear;
 	&.is-hidden {
-		display: none;
+		visibility: hidden;
+		opacity: 0;
+	}
+	&.scroll-on{
+		overflow-y: scroll;
 	}
 }
 
+
 .backdrop {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	position: relative;
+	@include flex(space-between, center);
 	width: 100%;
 	height: 100%;
 	padding: 0 20px;
 	background-color: rgba(0, 0, 0, 0.9);
+	.container-nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 70px;
+		@include flex(flex-end, center);
+		column-gap: 10px;
+		padding-right: 20px;
+		z-index: 300;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
 	.container-slider {
-		max-width: 70vw;
-		height: 100vh;
-		@include flex(center, center);
+		display: flex;
+		overflow: hidden;
+		height: auto;
 		background-color: transparent;
+		@media screen and (min-width: $tablet-small) {
+			height: 100%;
+		}
+		&.increase {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 100%;
+			height: auto;
+			transform: translate(-50%, -50%);
+			z-index: 299;
+			@media screen and(min-width: $desctop){
+				top: 0;
+				transform: translate(-50%, 0);
+			}
+		}
 	}
 }
 
-
-.container-nav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 70px;
-	@include flex(flex-end, center);
-	column-gap: 10px;
-	padding-right: 20px;
-	z-index: 300;
-	background-color: rgba(0, 0, 0, 0.2);
-}
 
 .btn {
 	background-color: transparent;
@@ -64,8 +85,10 @@
 		}
 	}
 	&.change-slide {
+		position: relative;
 		width: 30px;
 		height: 30px;
+		z-index: 300;
 		&:hover {
 			transform: scale(1.1);
 		}
@@ -85,6 +108,9 @@
 		&:focus {
 			background-color: rgba(255, 255, 255, 0.2);
 		}
+	}
+	&.hidden {
+		display: none;
 	}
 }
 
@@ -106,3 +132,20 @@
 	}
 }
 
+
+.animation{
+	animation: changingImageAnim 1s ease 0s 1 normal;
+}
+
+@keyframes changingImageAnim {
+	0% {
+		transform: scaleX(0.9);
+		opacity: 0;
+	}
+	50% {
+		transform: scaleX(1);
+	}
+	100% {
+		opacity: 1;
+	}
+}

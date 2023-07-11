@@ -11,19 +11,30 @@
 			width: 50%;
 		}
 		min-height: 468px;
-	}
-	.subjects {
-		max-width: 50%;
-		text-align: center;
-		padding: 0 0 0 20px;
-		@media screen and (min-width: $mobile) and (max-width: $desctop){
+		.subjects-container{
+			width: 100%;
 			text-align: left;
+			padding-left: 20px;
+			@media screen and (min-width: $tablet-small) {
+				text-align: left;
+			}
+			@media screen and (min-width: $desctop) {
+				text-align: end;
+				padding-right: 500px;
+			}
 		}
-		@media screen and (min-width: $desctop){
-			text-align: center;
-		}
-
 	}
+	// .subjects {
+	// 	max-width: 50%;
+	// 	text-align: center;
+	// 	@media screen and (min-width: $mobile) and (max-width: $desctop){
+	// 		text-align: left;
+	// 	}
+	// 	@media screen and (min-width: $desctop){
+	// 		text-align: center;
+	// 	}
+
+	// }
 	&-list-container {
 		position: relative;
 		@include flex(baseline, center);
