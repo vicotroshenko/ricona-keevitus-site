@@ -8,11 +8,8 @@ const scaleBtnPlus = document.querySelector('.js-scale-plus');
 const scaleBtnMinus = document.querySelector('.js-scale-minus');
 const bodyRef = document.querySelector('body');
 
-const state = {
-  imageList: [],
-  index: 0,
-}
-
+let imageList = [];
+let index = 0;
 
 openModalBtn.forEach(btn => btn.addEventListener('click', toggleModal));
 openModalBtn.forEach(btn => btn.addEventListener('click', getImage));
@@ -25,9 +22,10 @@ function toggleModal() {
   bodyRef.classList.toggle('overflow-hidden');
 }
 
-imgRef.forEach(img => state.imageList.push(img.src));
+imgRef.forEach(img => imageList.push(img.src));
 
 function getImage(event) {
+  console.log(event.target);
   imageContainer.innerHTML = `<img src="${event.target.src}" alt="" class="img"/>`;
 }
 
@@ -45,10 +43,16 @@ function getSlider(event) {
     return;
   }
 
-  state.index = name === 'forward' ? state.index + 1 : state.index;
-  state.index = name === 'back' ? state.index - 1 : state.index;
-  state.index = state.index > state.imageList.length - 1 ? 0 : state.index;
-  state.index = state.index < 0 ? state.imageList.length - 1 : state.index;
- 
-  imageContainer.innerHTML = `<img src="${state.imageList[state.index]}" alt="" class="img animation"/>`;
+  const slideBox = imageList.filter(
+    (slide, index, array) => array.indexOf(slide) === index
+  );
+
+  index = name === 'forward' ? index + 1 : index;
+  index = name === 'back' ? index - 1 : index;
+  index = index > slideBox.length - 1 ? 0 : index;
+  index = index < 0 ? slideBox.length - 1 : index;
+
+
+  imageContainer.innerHTML = `<img src="${slideBox[index]}" alt="slede number${index}" class="img animation"/>`;
 }
+

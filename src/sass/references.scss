@@ -1,5 +1,8 @@
 .references {
-    padding-top: 100px;
+    padding-top: 200px;
+    @media screen and(min-width: $tablet-small){
+      padding-top: 100px;
+    }
   &-gallery {
     max-width: 1020px;
     margin: 0 auto;

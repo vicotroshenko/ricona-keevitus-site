@@ -102,30 +102,41 @@
 		height: 320px;
 		inset: -15% auto auto 80%;
 		z-index: 2;
-		@media screen and (min-width: 1250px){
-			inset: -10% auto auto 93%;
+		@media screen and (min-width: $desctop){
+			inset: -10% auto auto 80%;
+		}
+
+		@media screen and (min-width: 1600px){
+			inset: -10% auto auto 85%;
+			width: 100%;
+			max-width: 420px;
+			height: 420px;
 		}
 		.item-3 {
 			width: 453px;
 			height: 453px;
-			background-image: url("../images/hero-2.jpg");
-			background: linear-gradient(to right, transparent, white), url("../images/hero-2.jpg");
+			background: linear-gradient(to right, transparent 60%, white), url("../images/hero-2.png");
 			transform: rotate(-0.125turn) translate(0%, 5%);
+			@media screen and (min-width: 1600px){
+				width: 590px;
+				height: 590px;
+				transform: rotate(-0.125turn) translate(0%, 5%);
+			}
 		}
 	}
 	.box-4 {
-		width: 260px;
-		height: 130px;
+		width: 300px;
+		height: 160px;
 		inset: 0 25% auto auto;
 		z-index: 2;
 		@media screen and (min-width: 1250px){
-			inset: 0 15% auto auto;
+			inset: 0 25% auto auto;
 		}
 		.item-4 {
 			width: 500px;
 			height: 360px;
-			background-image: url("../images/hero-3.jpg");
-			transform: rotate(-0.125turn) translateY(-30%);
+			background-image: url("../images/hero-3.jfif");
+			transform: rotate(-0.125turn) translateY(-15%);
 		}
 	}
 	.box-5 {
@@ -135,7 +146,7 @@
     left: -20%;
 		z-index: 2;
 		transform: rotate(0.125turn);
-		background: linear-gradient(225deg, rgba(17, 38, 58, 1) 50%, rgba(255, 255, 255, 0.9)) #11263A;
+		background: linear-gradient(225deg, rgba(17, 38, 58, 1) 60%, rgba(255, 255, 255, 0.9)) #11263A;
 		@media screen and (min-width: 1250px){
 			width: 500px;
 			height: 500px;
@@ -166,9 +177,9 @@
 		width: 100%;
 		max-width: 220px;
 		height: 220px;
-		inset: auto auto 10% 80%;
+		inset: auto auto 10% 70%;
 		z-index: 2;
-		@media screen and (min-width: 1250px){
+		@media screen and (min-width: 1600px){
 			inset: auto auto 10% 80%;
 		}
 		.item-gif {

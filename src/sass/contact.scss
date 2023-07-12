@@ -9,9 +9,13 @@
 	}
 	.subjects {
 		color: $white-t-color;
-		margin-bottom: 48px;
-		width: 50%;
-    text-align: center;
+		padding-bottom: 48px;
+		justify-content: center;
+		width: 100%;
+    margin: 0 auto;
+		@media screen and(min-width: $desctop-big){
+		text-align: center;
+		}
 		&::after{
 			background-color: $white-t-color
 		}

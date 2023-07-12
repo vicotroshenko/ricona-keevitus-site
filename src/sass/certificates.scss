@@ -11,6 +11,15 @@
 			@include flex(space-between, normal);
 			column-gap: 214px;
 		}
+		.subjects-overlay{
+			@media screen and (min-width: $tablet-small){
+				width: 35%;
+			}
+			.subjects {
+				display: flex
+			}
+		}
+
 	}
 	&-list{
 		@include flex(center, center);
