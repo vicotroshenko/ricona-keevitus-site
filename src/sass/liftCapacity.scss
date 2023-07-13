@@ -5,11 +5,11 @@
 	padding-top: 100px;
 	min-height: 533px;
 	.subjects {
+		width: 80%;
 		margin-bottom: 60px;
 		margin-left: 30px;
 		@media screen and (min-width: $tablet-small){
 			display: block;
-			width: 100%;
 			max-width: 1080px;
 			margin-bottom: 20px;
 			margin-left: auto;
